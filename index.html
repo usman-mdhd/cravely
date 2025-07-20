@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cravely - Food Delivery</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Cravely</div>
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#categories">Categories</a>
+      <a href="#cart-section" id="cart-link">Cart</a>
+      <a href="#orders-section" id="orders-link">Past Orders</a>
+    </nav>
+    <button id="theme-toggle" aria-label="Toggle Theme">🌙</button>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <h1>Crave. Click. Enjoy.</h1>
+      <p>Delicious meals delivered to your doorstep</p>
+    </section>
+
+    <section id="categories" class="categories">
+      <h2>Explore Categories</h2>
+      <div class="category-list">
+        <div class="card pizza">🍕 Pizza</div>
+        <div class="card burger">🍔 Burgers</div>
+        <div class="card dessert">🍰 Desserts</div>
+        <div class="card mojito">🥤 Mojitos</div>
+      </div>
+    </section>
+
+    <section id="product-list" class="products" style="display:none;">
+      <h2 id="product-title"></h2>
+      <div id="products-container" class="product-cards"></div>
+    </section>
+
+    <section id="cart-section" class="cart-section" style="display:none;">
+      <h2>Your Cart</h2>
+      <div id="cart-items"></div>
+      <h3 id="cart-total"></h3>
+
+      <form id="order-form">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="text" id="address" placeholder="Delivery Address" required />
+        <input type="tel" id="phone" placeholder="Phone Number" required />
+        <select id="payment">
+          <option value="COD">Cash on Delivery</option>
+          <option value="UPI">UPI</option>
+          <option value="Card">Credit/Debit Card</option>
+        </select>
+        <button type="submit">Place Order</button>
+      </form>
+    </section>
+
+    <section id="order-summary" class="order-summary" style="display:none;">
+      <h2>Order Summary</h2>
+      <div id="summary-details"></div>
+      <button id="summary-back">Back to Home</button>
+    </section>
+
+    <section id="orders-section" class="orders-section" style="display:none;">
+      <h2>Past Orders</h2>
+      <div id="past-orders"></div>
+      <button id="orders-back">Back to Home</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Cravely. All rights reserved.</p>
+  </footer>
+
+  <!-- Product Detail Modal -->
+  <div id="product-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close-btn" id="close-modal">&times;</span>
+      <h3 id="modal-name"></h3>
+      <p id="modal-desc"></p>
+      <p id="modal-price"></p>
+      <button id="modal-add-btn">Add to Cart</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
